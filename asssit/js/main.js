@@ -3,7 +3,7 @@
 
 let posts = [
     {
-        id: "",
+        id: "1001",
         contenuto: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus molestiae odio pariatur voluptatem a dolore dolorem similique perspiciatis nobis, quae cum, sapiente repudiandae provident possimus ducimus enim eligendi dolormagni",
         immagine: "https://i.picsum.photos/id/403/536/354.jpg?hmac=Cg78SPqGbiGuHfV34a5FcODRJKcDZ6BJu_xkudFYCrE",
         name: "Phil Mangione",
@@ -12,16 +12,16 @@ let posts = [
         howManyLikes: 80
     },
     {
-        id: "",
+        id: "1002",
         contenuto: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus molestiae odio pariatur voluptatem a dolore dolorem similique perspiciatis nobis, quae cum, sapiente repudiandae provident possimus ducimus enim eligendi dolormagni",
         immagine: "https://i.picsum.photos/id/195/536/354.jpg?hmac=8JxyDR_BWRmceDkbJHlE2tw93E2AQ96jI-Qpv40-ZXc",
         name: "Travis George",
-        avatar: "https://i.picsum.photos/id/500/536/354.jpg?hmac=aKRIiVLWoa1f5LnnykiaUzTOPvhxK2WuaiA-F2m2LO0",
+        avatar: "https://i.picsum.photos/id/406/536/354.jpg?hmac=eXfLU8DQZA5JkwIPrZ3hvXFwQ7-hIDT4-GzBRfpH2y8",
         dataCreazione: "2 mesi fa",
         howManyLikes: "70"
     },
     {
-        id: "",
+        id: "1003",
         contenuto: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus molestiae odio pariatur voluptatem a dolore dolorem similique perspiciatis nobis, quae cum, sapiente repudiandae provident possimus ducimus enim eligendi dolormagni",
         immagine: "https://i.picsum.photos/id/594/536/354.jpg?hmac=51jzctSPRfmg0VV_LXPN_3Wgin9y6XMUA0NsnB7Yegw",
         name: "Roman Morris",
@@ -31,8 +31,12 @@ let posts = [
     },
 ]
 
+
+let like = ["1001", "1002"]
+
 for (let index = 0; index < posts.length; index++) {
     const singlePost = posts[index];
+
     const element = `
     <div class="card p-3 mb-3 bg-white">
     <div class="intestazione d-flex">
@@ -52,7 +56,7 @@ for (let index = 0; index < posts.length; index++) {
     <div class="card-body d-flex align-items-center">
         <div id="btn-like" class="col-6 text-center">
             <span><i class="fas fa-thumbs-up"></i>
-                <a href="">Mi Piace</a></span>
+                <a class="text-like" href="">Mi Piace</a></span>
         </div>
         <div class="col-6 text-center">
             <span>Piace a <strong>${singlePost.howManyLikes}</strong> persone</span>
@@ -60,5 +64,14 @@ for (let index = 0; index < posts.length; index++) {
     </div>
 </div>`
     document.querySelector(".col-4").insertAdjacentHTML("beforeend", element)
+
+    let liked = ""
+
+    if (liked.includes(singlePost.id)) {
+        document.querySelector(".fa-thumbs-up").style.color = "green";
+        document.querySelector(".text-like").style.color = "green";
+    }
+
+
 }
 
