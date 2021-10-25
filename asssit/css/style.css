@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #102f45;
+}
+
+.titolo {
+  font-size: 100px;
+}
+
+.container-fluid > div {
+  height: 200px;
+}
+
+.intestazione > img {
+  width: 90px;
+  height: 90px;
+}
+
+.card-img-top {
+  height: 550px;
+}
+
+.fa-thumbs-up,
+#btn-like > a {
+  color: #404040;
+}
+
+#btn-like a {
+  text-decoration: none;
+}
+
+#btn-like a:visited {
+  color: #404040;
+}
